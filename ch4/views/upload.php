@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors',1);
 //complete source code for views/upload.php
-
+include_once "classes/uploader.class.php";
 $imageSent = isset($_POST['new-img']);
 if($imageSent){
     $out = showImage();
@@ -13,6 +13,13 @@ if($imageSent){
 return $out;
 
 function showImage(){
-    $out = "<pre>".print_r($_FILES,true)."</pre>";
+    $fileUpload = new Uploder('image-data');
+    $fileUpload->saveIn("img");
+    $saved =  $fileUpload->save();
+    if($saved){
+        $out = "<p>file uploaded</p>";
+    }else
+        $out = "<p>somthing wrong </p>";
+
     return $out;
 }

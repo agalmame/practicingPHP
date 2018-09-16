@@ -9,7 +9,7 @@ function showImage(){
     $out .= "<ul id='image'>";
     $out .= "<li>will soon </li>";
     
-    $filesInFolder = new DirectoryIterator("img");
+    $filesInFolder = new DirectoryIterator('img');
     while($filesInFolder->valid()){
         $file = $filesInFolder->current();
         $fileName = $file->getFilename();
