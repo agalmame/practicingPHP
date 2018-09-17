@@ -4,6 +4,7 @@ ini_set('display_errors',1);
 //complete source code for views/upload.php
 include_once "classes/uploader.class.php";
 $imageSent = isset($_POST['new-img']);
+
 if($imageSent){
     $out = showImage();
 }else{

@@ -10,6 +10,7 @@ public function __construct($key){
     $this->fileData = $_FILES[$key]['tmp_name'];
 }
 
+
  public function saveIn($folder){
     $this->destination = $folder;
  }

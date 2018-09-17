@@ -7,8 +7,13 @@ class Page_Data
     public $content = "";
     public $css = "";
     public $embededStyle = "";
+    public $jsElements="";
 
     public function addCSS($href){
         $this->css .= "<link href=$href rel='stylesheet'>";
+    }
+
+    public function setJS($jsFile){
+        $this->jsElements .= "<script src='$jsFile'></script>";
     }
 }

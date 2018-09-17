@@ -6,8 +6,7 @@ return showImage();
 
 function showImage(){
     $out = "<h1>Image Gallery</h1>";
-    $out .= "<ul id='image'>";
-    $out .= "<li>will soon </li>";
+    $out .= "<ul id='images'>";
     
     $filesInFolder = new DirectoryIterator('img');
     while($filesInFolder->valid()){
@@ -17,7 +16,7 @@ function showImage(){
         $fileInfo = new Finfo( FILEINFO_MIME_TYPE);
         $mimeType = $fileInfo->file($src);
         if($mimeType == 'image/jpeg' || $mimeType =='image/png'){
-            $out .=  "<li><img alt='$fileName' src= '$src'/>";
+            $out .=  "<li><img alt='$fileName' src= '$src'/></li>";
         }
         $filesInFolder->next();
 

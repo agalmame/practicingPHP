@@ -12,6 +12,7 @@ $pageData->css
 <meta Content= text/html;charset=UTF-8;http-equiv='Content-Type>
 <meta name='viewport' content='width=device-width,initial-scale=1.0'>
 $pageData->css
+$pageData->jsElements
 $pageData->embededStyle 
 </head>
 <body>

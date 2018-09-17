@@ -13,6 +13,7 @@ if(isset($_GET['page'])){
 }
 $pageData->addCSS('css/layout.css');
 $pageData->addCSS('css/navi.css');
+$pageData->setJS('js/lightbox.js');
 $pageData->content = include_once "views/navigations.php"; 
 $pageData->content .= include_once "views/$fileToLoad.php";
 $page = include_once "templates/page.php";
