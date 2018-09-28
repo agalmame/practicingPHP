@@ -6,6 +6,7 @@ if(isset($_GET['id'])){
     $entryId = $_GET['id'];
     $object= $entryTable->getEntry($entryId);
     $blogOutput = include_once "views/entry-html.php";
+    $blogOutput .= include_once "controllers/comment.php";
 }else{
     $entries = $entryTable->getAllEntries();
     $blogOutput = include_once "views/list-entry-html.php";
