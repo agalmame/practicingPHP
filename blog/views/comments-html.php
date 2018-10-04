@@ -3,8 +3,6 @@ if(!isset($allComments)){
     trigger_error('views/comments-html.php needs $allComment');
 }
 
-
-
 $allCommentsHtml = "<ul id='comments'>";
 while($commentData = $allComments->fetchObject()){
     $allCommentsHtml .= "<li>
@@ -12,6 +10,6 @@ while($commentData = $allComments->fetchObject()){
                             <p>$commentData->txt</p>
                         </li>";
 }
-$allCommentsHtml = "</ul>";
+$allCommentsHtml .= "</ul>";
 return $allCommentsHtml;
 ?>

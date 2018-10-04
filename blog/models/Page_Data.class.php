@@ -9,7 +9,7 @@ class Page_Data
     public $scriptElements = "";
 
     public function addStyle($href){
-        $this->css .= "<link rel='stylesheet' href='$href'/>";
+        $this->css .= "<link rel='stylesheet' href='$href?v=". time() . "'/>";
     }
 
     public function addScript($src){

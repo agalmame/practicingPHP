@@ -21,7 +21,7 @@ public function __construct($key){
         $name = "$this->destination/$this->fileName";
         $succes = move_uploaded_file($this->fileData,$name);
     }else{
-        trigger_error("cannot wrate to $this->destination");
+        trigger_error("cannot write to $this->destination");
         $succes = false;
     }
     return $succes;

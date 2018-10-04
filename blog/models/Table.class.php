@@ -1,6 +1,6 @@
 <?php
 class Table{
-    private $db;
+    public $db;
 
     public function __construct($db){
         $this->db = $db;
@@ -18,4 +18,5 @@ class Table{
         return $statement;
     }
 }
+
 ?>
