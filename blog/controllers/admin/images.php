@@ -12,5 +12,9 @@ if(isset($_FILES['image'])){
     }
 }
 
+if(isset($_GET['delete-image']) and file_exists($_GET['delete-image'])){
+    unlink($_GET['delete-image']);
+}
+
 $imageManager = include_once "views/admin/image-html.php";
 return $imageManager;

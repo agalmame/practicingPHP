@@ -8,11 +8,12 @@ if(!isset($entryData)){
 
 return "
 <form method='post'  action='admin.php?page=editor' id='editor'>
-    <input  id='id' name='id' value='$entryData->entry_id' type='hidden'/>
+    <input  id='id' name='id'  value='$entryData->entry_id' type='hidden'/>
     <fieldset>
         <legend>New Entery Submission</legend>
         <label>Title</label>
-        <input type='text' name='title' required maxlenght='150' value = '$entryData->title'/>
+        <input type='text' name='title'  maxlenght='150' value = '$entryData->title'/>
+        <p id='title-warning'></p>
         <label>Entry</label>
         <textarea name='entry'>$entryData->entry_text</textarea>
         <fieldset id='editor-buttons'>

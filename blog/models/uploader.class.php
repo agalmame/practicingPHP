@@ -24,6 +24,9 @@ class Uploader{
             $this->errorMessage = "ERROR: the folder $folderIsWritable
                                     isn't writable chande permission";
             $canUpload = false;
+        }elseif($this->errorCode == 1){
+            $this->errorMessage = "ERROR: this file i too big than it should";
+            $canUpload = false;
         }else{
             $canUpload = true;
         }

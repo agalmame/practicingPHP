@@ -25,10 +25,17 @@ class Blog_Entry_Table extends Table{
     }
 
     public function deleteEntry($id){
-        $this->deleteCommentById($id);
-        $sql = "delete from blog_entry2 where entry_id=?";
-        $data = array($id);
-        $statement = $this->makeStatement($sql,$data);
+        try{    
+            $this->db->beginTransaction();
+            $this->deleteCommentById($id);
+            $sql = "delete from blog_entry2 where entry_id=?";
+            $data = array($id);
+            $statement = $this->makeStatement($sql,$data);
+            $this->db->commit();
+        }catch(Exception $e){
+            $this->db->rollBack();
+            trigger_error("failed: ".$e->getMessage());
+        }
     }
 
     private function deleteCommentById($id){

@@ -31,3 +31,24 @@ form#comment-form label, form#comment-form input[type='submit']{
     padding-top: 0.7em;
     display: block;
 }
+
+#images {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+#images img {
+    /* display: inline-block; */
+    display: flex;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+}
+#admin-navigation a{
+    display: inline-block;
+}
+
+#admin-navigation a[href='admin.php?log=out']{
+    margin-left: 700px;
+    /* text-align: right; */
+}
